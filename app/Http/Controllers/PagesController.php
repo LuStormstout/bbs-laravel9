@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+    /**
+     * 首页
+     *
+     * @return Factory|View|Application
+     */
     public function root(): Factory|View|Application
     {
         return view('pages.root');
