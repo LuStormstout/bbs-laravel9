@@ -22,3 +22,5 @@
 - [x] 删除 Laravel auth 生成的我们不需要的文件
     - [x] `rm app/Http/Controllers/HomeController.php`
     - [x] `rm resources/views/home.blade.php`
+- [x] `composer require "overtrue/laravel-lang:~6.0"` 安装 Laravel 语言包
+- [x] `php artisan lang:publish zh_CN` 发布 Laravel 语言包
