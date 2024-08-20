@@ -18,3 +18,7 @@
 - [x] `yarn run watch-poll` 编译前端资源
 - [x] `yarn cache clean` 清除 yarn 缓存，解决 yarn add @fortawesome/fontawesome-free 安装失败问题
 - [x] `yarn add @fortawesome/fontawesome-free --dev` 安装 fontawesome
+- [x] `php artisan ui:auth` 安装 laravel auth
+- [x] 删除 Laravel auth 生成的我们不需要的文件
+    - [x] `rm app/Http/Controllers/HomeController.php`
+    - [x] `rm resources/views/home.blade.php`
