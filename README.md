@@ -12,3 +12,5 @@
 - [x] `rm resources/views/welcome.blade.php` 删除默认视图文件
 - [x] `composer require laravel/ui:3.4.5 --dev` 安装 laravel/ui
 - [x] `php artisan ui bootstrap` 安装 bootstrap
+- [x] `yarn add resolve-url-loader@^5.0.0 --dev` 安装 resolve-url-loader
+- [x] `yarn run watch-poll` 编译前端资源
