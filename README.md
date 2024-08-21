@@ -29,3 +29,5 @@
 - [x] `php artisan migrate` 执行数据迁移文件
 - [x] `composer require "mews/captcha:~3.0"` 安装验证码包
 - [x] `php artisan vendor:publish --provider="Mews\Captcha\CaptchaServiceProvider"` 发布验证码配置文件
+- [x] `php artisan make:middleware EnsureEmailIsVerified` 创建邮箱认证中间件
+- [x] `php artisan event:generate` 生成监听器
