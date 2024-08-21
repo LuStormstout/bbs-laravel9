@@ -24,3 +24,8 @@
     - [x] `rm resources/views/home.blade.php`
 - [x] `composer require "overtrue/laravel-lang:~6.0"` 安装 Laravel 语言包
 - [x] `php artisan lang:publish zh_CN` 发布 Laravel 语言包
+
+## 2024-08-21 干了什么
+- [x] `php artisan migrate` 执行数据迁移文件
+- [x] `composer require "mews/captcha:~3.0"` 安装验证码包
+- [x] `php artisan vendor:publish --provider="Mews\Captcha\CaptchaServiceProvider"` 发布验证码配置文件
