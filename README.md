@@ -50,5 +50,5 @@
 - 完成的任务
     - 编辑个人资料
     - 显示个人资料
-    - 
+    - 上传头像，需要去 public/uploads/images/avatars/.gitignore 文件中添加忽略规则，防止上传的头像文件被 git 管理 
     - 
