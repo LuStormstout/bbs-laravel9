@@ -28,8 +28,8 @@
                            data-bs-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             <img
-                                    src="https://cdn.learnku.com/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/600/h/600"
-                                    class="img-responsive img-circle" width="30px" height="30px" alt="">
+                                src="{{ Auth::user()->avatar }}"
+                                class="img-responsive img-circle" width="30px" height="30px" alt="">
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
