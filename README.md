@@ -41,3 +41,14 @@
   - 强制用户认证
   - 认证成功提示
   - 密码重置以及重置成功后的提示
+
+## 2024-08-22
+
+- 运行的命令
+    - [x] `php artisan make:controller UsersController` 创建 UsersController 控制器
+    - [x] `php artisan make:migration add_avatar_and_introduction_to_users_table --table=users` 添加头像和个人简介字段到 users 表
+- 完成的任务
+    - 编辑个人资料
+    - 显示个人资料
+    - 
+    - 
