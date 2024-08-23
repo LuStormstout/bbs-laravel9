@@ -47,8 +47,15 @@
 - 运行的命令
     - [x] `php artisan make:controller UsersController` 创建 UsersController 控制器
     - [x] `php artisan make:migration add_avatar_and_introduction_to_users_table --table=users` 添加头像和个人简介字段到 users 表
+    - [x] `composer require "intervention/image:^3.7" -W` 安装图片处理包
 - 完成的任务
     - 编辑个人资料
     - 显示个人资料
     - 上传头像，需要去 public/uploads/images/avatars/.gitignore 文件中添加忽略规则，防止上传的头像文件被 git 管理 
-    - 
+
+## 2024-08-23
+
+- 运行的命令
+    - [x] `composer require imagine/imagine` 安装 imagine/imagine 图片处理库，用于裁切图片
+- 完成的任务
+    - 裁切头像
