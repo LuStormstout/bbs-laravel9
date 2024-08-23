@@ -62,13 +62,20 @@
     - [x] `php artisan make:migration seed_categories_data` 创建填充 categories 表数据的数据迁移文件
     - [x] `php artisan migrate` 执行数据迁移文件
     - [x] `composer require "summerblue/generator:9.*" --dev` 安装 laravel 代码生成器
-    - [x] `php artisan make:scaffold Topic --schema="title:string:index,body:text,user_id:bigInteger:unsigned:index,category_id:integer:unsigned:index,reply_count:integer:unsigned:default(0),view_count:integer:unsigned:default(0),last_reply_user_id:integer:unsigned:default(0),order:integer:unsigned:default(0),excerpt:text:nullable,slug:string:nullable""`
+    - [x] `php artisan make:scaffold Topic --schema="title:string:index,body:text,user_id:bigInteger:unsigned:index,category_id:integer:unsigned:index,reply_count:integer:unsigned:default(0),view_count:integer:unsigned:default(0),last_reply_user_id:integer:unsigned:default(0),order:integer:unsigned:default(0),excerpt:text:nullable,slug:string:nullable"`
       用 generator 生成 Topic 的模型、控制器、视图、数据迁移文件等
     - [x] `php artisan make:seed UsersTableSeeder` 创建填充 users 表数据的数据迁移文件
     - [x] `php artisan db:seed` 执行数据填充
     - [x] `php artisan migrate:refresh --seed` 刷新数据库并填充数据，在生产环境中不要使用
+    
 - 完成的任务
     - 裁切头像
+    - 创建分类数据模型并且填充数据
+    - 使用 laravel 代码生成器生成 Topic 的模型、控制器、视图、数据迁移文件等
+    - 用户数据填充
+    - 话题数据填充
+    - 话题列表页
+    
 - 在 Windows 下 PhpStorm 中 shift + control + o 打开某个文件，在 Mac 下是 shift + command + o
 
 - 创建 topics 表
@@ -82,6 +89,7 @@
     - `order:integer:unsigned:default(0)` 排序 int 默认 0
     - `excerpt:text:nullable` 摘要 text 可为空
     - `slug:string:nullable` slug string 可为空
+    
 - 执行命令 `php artisan make:scaffold Topic --schema="title:string......` 后自动创建的文件
     - ----------- scaffolding: Topic -----------
     -
