@@ -60,6 +60,7 @@
     - [x] `php artisan make:model Category -m` 创建 Category 模型和数据迁移文件，-m 选项表示同时创建数据迁移文件
     - [x] `php artisan make:migration seed_categories_data` 创建填充 categories 表数据的数据迁移文件
     - [x] `php artisan migrate` 执行数据迁移文件
+    - [x] `composer require "summerblue/generator:9.*" --dev` 安装 laravel 代码生成器
 - 完成的任务
     - 裁切头像
 - 在 Windows 下 PhpStorm 中 shift + control + o 打开某个文件，在 Mac 下是 shift + command + o
