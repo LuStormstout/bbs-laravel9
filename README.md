@@ -63,7 +63,10 @@
     - [x] `php artisan migrate` 执行数据迁移文件
     - [x] `composer require "summerblue/generator:9.*" --dev` 安装 laravel 代码生成器
     - [x] `php artisan make:scaffold Topic --schema="title:string:index,body:text,user_id:bigInteger:unsigned:index,category_id:integer:unsigned:index,reply_count:integer:unsigned:default(0),view_count:integer:unsigned:default(0),last_reply_user_id:integer:unsigned:default(0),order:integer:unsigned:default(0),excerpt:text:nullable,slug:string:nullable""`
-      用 generator 生成 Topic 的模型、控制器、视图、数据迁移文件
+      用 generator 生成 Topic 的模型、控制器、视图、数据迁移文件等
+    - [x] `php artisan make:seed UsersTableSeeder` 创建填充 users 表数据的数据迁移文件
+    - [x] `php artisan db:seed` 执行数据填充
+    - [x] `php artisan migrate:refresh --seed` 刷新数据库并填充数据，在生产环境中不要使用
 - 完成的任务
     - 裁切头像
 - 在 Windows 下 PhpStorm 中 shift + control + o 打开某个文件，在 Mac 下是 shift + command + o
@@ -80,8 +83,8 @@
     - `excerpt:text:nullable` 摘要 text 可为空
     - `slug:string:nullable` slug string 可为空
 - 执行命令 `php artisan make:scaffold Topic --schema="title:string......` 后自动创建的文件
-    -   ----------- scaffolding: Topic -----------
-    - 
+    - ----------- scaffolding: Topic -----------
+    -
     - \+ ./database/migrations/2024_08_23_104426_create_topics_table.php // 创建 topics 表
     - \+ ./database/factories/TopicFactory.php // 创建 TopicFactory 工厂
     - \+ ./database/seeders/TopicsTableSeeder.php // 创建 TopicsTableSeeder 填充 topics 表数据
@@ -98,13 +101,13 @@
     - \+ ./app/Policies/TopicPolicy.php // 创建 TopicPolicy 策略
     - \+ ./app/Providers/AuthServiceProvider.php (Updated) // 更新 AuthServiceProvider 文件
     - \+ ./routes/web.php (Updated) // 更新 web.php 路由文件
-    - 
+    -
     - --- Views ---
     - \+ create_and_edit.blade.php // 创建和编辑视图
     - \+ index.blade.php // 列表视图
     - \+ show.blade.php // 详情视图
-    -   x ./resources/views/layouts/app.blade.php (Skipped) // 跳过 layouts/app.blade.php
+    - x ./resources/views/layouts/app.blade.php (Skipped) // 跳过 layouts/app.blade.php
     - \+ ./resources/views/common/error.blade.php // 创建 common/error.blade.php
-    -   INFO  Running migrations. // 执行数据迁移
-    - 
-    -   2024_08_23_104426_create_topics_table .................................... 44ms DONE // 创建 topics 表
+    - INFO Running migrations. // 执行数据迁移
+    -
+    - 2024_08_23_104426_create_topics_table .................................... 44ms DONE // 创建 topics 表
