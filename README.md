@@ -59,3 +59,4 @@
     - [x] `composer require imagine/imagine` 安装 imagine/imagine 图片处理库，用于裁切图片
 - 完成的任务
     - 裁切头像
+- 在 Windows 下 PhpStorm 中 shift + control + o 打开某个文件，在 Mac 下是 shift + command + o
