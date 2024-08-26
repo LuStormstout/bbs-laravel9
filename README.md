@@ -127,3 +127,8 @@
     - [x] `php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"` 发布调试工具配置文件
     - [x] `php artisan make:controller CategoriesController` 创建 CategoriesController 控制器
     - [x] `composer require "summerblue/laravel-active:9.*"` 安装 laravel-active
+    
+- 完成的任务
+    - 性能优化
+    - 分类下的话题列表
+    - 话题列表排序
