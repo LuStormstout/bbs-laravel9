@@ -125,3 +125,5 @@
 - 运行的命令
     - [x] `composer require "barryvdh/laravel-debugbar:~3.6" --dev` 安装调试工具
     - [x] `php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"` 发布调试工具配置文件
+    - [x] `php artisan make:controller CategoriesController` 创建 CategoriesController 控制器
+    - [x] `composer require "summerblue/laravel-active:9.*"` 安装 laravel-active
