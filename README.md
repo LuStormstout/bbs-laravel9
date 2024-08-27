@@ -132,3 +132,16 @@
     - 性能优化
     - 分类下的话题列表
     - 话题列表排序
+
+## 2024-08-27
+- Eloquence ORM 触发的事件
+    - creating, 创建的时候触发
+    - created, 创建完成后触发
+    - updating, 更新的时候触发
+    - updated, 更新完成后触发
+    - saving, 保存的时候触发
+    - saved, 保存完成后触发
+    - deleting, 删除的时候触发
+    - deleted, 删除完成后触发
+    - restoring, 恢复的时候触发
+    - restored 恢复完成后触发
