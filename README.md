@@ -67,7 +67,7 @@
     - [x] `php artisan make:seed UsersTableSeeder` 创建填充 users 表数据的数据迁移文件
     - [x] `php artisan db:seed` 执行数据填充
     - [x] `php artisan migrate:refresh --seed` 刷新数据库并填充数据，在生产环境中不要使用
-    
+
 - 完成的任务
     - 裁切头像
     - 创建分类数据模型并且填充数据
@@ -75,7 +75,7 @@
     - 用户数据填充
     - 话题数据填充
     - 话题列表页
-    
+
 - 在 Windows 下 PhpStorm 中 shift + control + o 打开某个文件，在 Mac 下是 shift + command + o
 
 - 创建 topics 表
@@ -89,7 +89,7 @@
     - `order:integer:unsigned:default(0)` 排序 int 默认 0
     - `excerpt:text:nullable` 摘要 text 可为空
     - `slug:string:nullable` slug string 可为空
-    
+
 - 执行命令 `php artisan make:scaffold Topic --schema="title:string......` 后自动创建的文件
     - ----------- scaffolding: Topic -----------
     -
@@ -127,13 +127,25 @@
     - [x] `php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"` 发布调试工具配置文件
     - [x] `php artisan make:controller CategoriesController` 创建 CategoriesController 控制器
     - [x] `composer require "summerblue/laravel-active:9.*"` 安装 laravel-active
-    
+
 - 完成的任务
     - 性能优化
     - 分类下的话题列表
     - 话题列表排序
 
 ## 2024-08-27
+
+- 安装 simditor
+    - 下载 [simditor](https://github.com/mycolorway/simditor/releases/download/v2.3.6/simditor-2.3.6.zip)
+    - 将 styles/simditor.css 放在 resources/css 目录下
+    - 将 scripts/module.js, scripts/hotkeys.js, scripts/uploader.js, scripts/simditor.js 放在 resources/js 目录下
+    - `yarn add jquery` 安装 jquery, 安装完成后在 resources/js/bootstrap.js 中引入
+    - `yarn run watch-poll` 编译前端资源
+
+- 今天做了些什么
+    - 在用户个人页面，展示用户创建的话题
+    - 用户创建话题
+
 - Eloquence ORM 触发的事件
     - creating, 创建的时候触发
     - created, 创建完成后触发
