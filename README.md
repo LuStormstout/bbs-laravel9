@@ -167,3 +167,7 @@
 - 运行的命令
     - [x] `composer require "mews/purifier:~3.3"` 安装 HTML 过滤器
     - [x] `php artisan vendor:publish --provider="Mews\Purifier\PurifierServiceProvider"` 发布 HTML 过滤器配置文件
+- 做了些什么
+    - XSS 过滤
+    - 话题编辑
+    - 话题删除
