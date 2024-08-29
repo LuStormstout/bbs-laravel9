@@ -183,3 +183,8 @@
 - 做了些什么
 
 - 运行的命令
+    - [x] `php artisan notifications:table` 创建通知数据表的迁移文件
+    - [x] `php artisan migrate` 执行数据迁移
+    - [x] `php artisan make:migration add_notification_count_to_users_table --table=users` 添加通知数量字段到 users 表
+    - [x] `php artisan migrate` 写完生成的数据迁移文件，再次执行数据迁移
+    - [x] `php artisan make:notification TopicReplied` 创建话题回复通知
