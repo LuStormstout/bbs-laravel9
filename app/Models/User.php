@@ -56,6 +56,18 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * 标记消息通知为已读
+     *
+     * @return void
+     */
+    public function markAsRead(): void
+    {
+        $this->notification_count = 0;
+        $this->save();
+        $this->unreadNotifications->markAsRead();
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
