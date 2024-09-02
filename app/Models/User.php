@@ -108,7 +108,8 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * 判断当前用户是否是话题的作者
+     * 判断当前用户是否是话题或者回复的作者
+     * 准确的说是判断当前用户是否是某个模型（$model）的作者
      *
      * @param $model
      * @return bool
