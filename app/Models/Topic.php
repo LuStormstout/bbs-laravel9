@@ -113,7 +113,25 @@ class Topic extends Model
         return $this->hasMany(Reply::class)->orderBy('created_at', 'desc');
     }
 
-    public function link($params = []): string
+    /**
+     * 当话题有新回复或者删除回复时
+     * 我们需要更新话题的 reply_count 属性
+     *
+     * @return void
+     */
+    public function updateReplyCount(): void
+    {
+        $this->reply_count = $this->replies->count();
+        $this->save();
+    }
+
+    /**
+     * 生成话题链接
+     *
+     * @param array $params
+     * @return string
+     */
+    public function link(array $params = []): string
     {
         return route('topics.show', array_merge([$this->id, $this->slug], $params));
     }
