@@ -199,3 +199,4 @@
     - [x] `composer require "predis/predis:~1.1"` 安装 predis
     - [x] `composer require "laravel/horizon:~5.9""` 安装 laravel horizon
     - [x] `php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` 发布 horizon 配置文件
+    - [x] `php artisan horizon` 启动 horizon 队列监控
