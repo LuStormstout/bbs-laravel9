@@ -200,3 +200,10 @@
     - [x] `composer require "laravel/horizon:~5.9""` 安装 laravel horizon
     - [x] `php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"` 发布 horizon 配置文件
     - [x] `php artisan horizon` 启动 horizon 队列监控
+- 今天做了些什么
+    - 收到新的回复的时候使用邮件通知用户
+    - 使用队列来发送邮件通知
+    - 队列监控
+    - 删除回复
+    - 删除回复的时候去更新话题的回复数
+    - 当删除话题的时候，删除话题下的所有回复
