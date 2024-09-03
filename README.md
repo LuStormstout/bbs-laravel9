@@ -237,7 +237,6 @@
     - 创建权限 `Permission::create(['name' => 'edit articles'])`
     - 给角色赋予权限 `$role->givePermissionTo('edit articles')`
     - 检查角色是否有权限 `$role->hasPermissionTo('edit articles')`
-    - 检查用户是否有权限 `$user->hasPermissionTo('edit articles')`
     - 检查用户是否有角色 `$user->hasRole('admin')`
     - 给用户赋予角色 `$user->assignRole('admin')` 或 `$user->syncRoles(['admin', 'writer'])`
     - 撤销用户的角色 `$user->removeRole('admin')`
