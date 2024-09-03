@@ -207,3 +207,37 @@
     - 删除回复
     - 删除回复的时候去更新话题的回复数
     - 当删除话题的时候，删除话题下的所有回复
+
+## 2024-09-03
+
+- Role 数据模型作为角色的表现（游客、用户、管理员、站长等）
+- 角色能做动作，我们称之为权限，Permission 数据模型作为权限的表现（查看、创建、编辑、删除等）
+- spaties/laravel-permission 是一个权限管理的包,他帮我们已经设计好了数据库表结构
+    - roles 角色的模型表；
+    - permissions 权限的模型表；
+    - model_has_roles 模型与角色的关联表，用户拥有什么角色在这个表中定义，一个用户能拥有多个角色；
+    - role_has_permissions 角色拥有的权限关联表，如管理员拥有查看后台的权限都是在次表中定义，一个角色能拥有多个权限；
+    - model_has_permissions 模型与权限的关联表，一个模型能拥有多个权限；
+- spaties/laravel-permission 的使用
+    - 创建角色 `Role::create(['name' => 'admin'])`
+    - 创建权限 `Permission::create(['name' => 'edit articles'])`
+    - 给角色赋予权限 `$role->givePermissionTo('edit articles')`
+    - 检查角色是否有权限 `$role->hasPermissionTo('edit articles')`
+    - 检查用户是否有权限 `$user->hasPermissionTo('edit articles')`
+    - 检查用户是否有角色 `$user->hasRole('admin')`
+    - 给用户赋予角色 `$user->assignRole('admin')` 或 `$user->syncRoles(['admin', 'writer'])`
+    - 撤销用户的角色 `$user->removeRole('admin')`
+    - 是否拥有任意角色 `$user->hasAnyRole(Role::all())`
+    - 是否拥有所有角色 `$user->hasAllRoles(Role::all())`
+    - 获取用户的所有角色 `$user->getRoleNames()`
+    - 检查用户是否拥有某个权限 `$user->can('edit articles')`
+
+- 执行的命令
+    - [x] `composer require "spatie/laravel-permission:~5.5"` 安装 spatie/laravel-permission
+    - [x] `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"` 发布
+      spatie/laravel-permission 配置文件
+    - [x] `php artisan migrate` 执行数据迁移
+    - [x] `php artisan make:migration seed_roles_and_permissions_data` 创建填充 roles 和 permissions 表数据的数据迁移文件
+    - [x] `php artisan migrate:reresh --seed` 刷新数据库并填充数据（在执行这条命令的时候需要跳过 Replies
+      模型的事件监听器），生产环境不要使用
+
