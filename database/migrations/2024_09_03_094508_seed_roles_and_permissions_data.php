@@ -21,9 +21,9 @@ return new class extends Migration {
         app(PermissionRegistrar::class)->forgetCachedPermissions();
 
         // 先创建权限
-        Permission::create(['name' => 'manage_contents']);
-        Permission::create(['name' => 'manage_users']);
-        Permission::create(['name' => 'edit_settings']);
+        Permission::create(['name' => 'manage_contents']); // 管理网站内容
+        Permission::create(['name' => 'manage_users']); // 管理用户
+        Permission::create(['name' => 'edit_settings']); // 编辑网站设置
 
         // 创建站长角色，并赋予权限
         $founder = Role::create(['name' => 'Founder']);
