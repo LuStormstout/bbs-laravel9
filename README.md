@@ -254,5 +254,15 @@
     - [x] `php artisan migrate:reresh --seed` 刷新数据库并填充数据（在执行这条命令的时候需要跳过 Replies
       模型的事件监听器），生产环境不要使用
     - [x] `composer require lab404/laravel-impersonate` 安装 lab404/laravel-impersonate 包，用于登录为其他用户
-    - [x] `php artisan vendor:publish` 发布 lab404/laravel-impersonate 配置文件，选择发布 Provider: Lab404\Impersonate\ImpersonateServiceProvider
+    - [x] `php artisan vendor:publish` 发布 lab404/laravel-impersonate 配置文件，选择发布 Provider:
+      Lab404\Impersonate\ImpersonateServiceProvider
+
+## 2024-09-04
+
+- 执行的命令
+    - [x] `composer require "summerblue/administrator:9.*"` 安装 summerblue/administrator
+    - [x] `php artisan vendor:publish --provider="Frozennode\Administrator\AdministratorServiceProvider"` 发布
+      summerblue/administrator 配置文件
+    - [x] `mkdir -p config/administrator/settings` 创建配置文件夹
+    - [x] `touch config/administrator/settings/.gitkeep` 创建 .gitkeep 文件, 在空文件夹中放置 .gitkeep 保证了 Git 会将此文件夹纳入版本控制器中。
 
