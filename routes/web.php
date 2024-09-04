@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,3 +67,7 @@ Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 
 // 通知列表
 Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
+
+// 模拟登录，用来测试 RBAC
+Route::get('/impersonate/{id}', [UsersController::class, 'impersonateUser'])->name('impersonate');
+Route::get('/stop-impersonating', [UsersController::class, 'stopImpersonating'])->name('stopImpersonating');

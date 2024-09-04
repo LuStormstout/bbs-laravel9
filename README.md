@@ -220,7 +220,7 @@
     - 一个权限可以被多个角色拥有
     - 一个用户可以拥有多个权限（但是一般情况下，我们是通过角色来控制用户的权限）
 - 通常的 RBAC 权限管理的表结构
-    - users 用户表 
+    - users 用户表
     - roles 角色表（财务、人事、销售、技术、管理员等）
     - permissions 权限表（查看不同部门的数据、编辑不同部门的数据、删除不同部门的数据等），对应的是具体的操作
     - role_has_permissions 角色拥有的权限表关联关系表（例如：管理员拥有查看、编辑、删除不同部门的数据的权限）
@@ -253,4 +253,6 @@
     - [x] `php artisan make:migration seed_roles_and_permissions_data` 创建填充 roles 和 permissions 表数据的数据迁移文件
     - [x] `php artisan migrate:reresh --seed` 刷新数据库并填充数据（在执行这条命令的时候需要跳过 Replies
       模型的事件监听器），生产环境不要使用
+    - [x] `composer require lab404/laravel-impersonate` 安装 lab404/laravel-impersonate 包，用于登录为其他用户
+    - [x] `php artisan vendor:publish` 发布 lab404/laravel-impersonate 配置文件，选择发布 Provider: Lab404\Impersonate\ImpersonateServiceProvider
 
