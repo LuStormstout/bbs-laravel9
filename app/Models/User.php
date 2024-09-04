@@ -134,4 +134,22 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Reply::class);
     }
+
+    /**
+     * 修改器，设置密码的时候自动加密
+     * 如果密码长度不是 60，就代表是明文密码，需要加密
+     * 当我们给属性赋值时，修改器会自动被调用
+     * 例如：$user->password = 'password';
+     *
+     * @param $value
+     * @return void
+     */
+    public function setPasswordAttribute($value): void
+    {
+        if (strlen($value) != 60) {
+            $value = bcrypt($value);
+        }
+
+        $this->attributes['password'] = $value;
+    }
 }

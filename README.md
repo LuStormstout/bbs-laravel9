@@ -265,4 +265,8 @@
       summerblue/administrator 配置文件
     - [x] `mkdir -p config/administrator/settings` 创建配置文件夹
     - [x] `touch config/administrator/settings/.gitkeep` 创建 .gitkeep 文件, 在空文件夹中放置 .gitkeep 保证了 Git 会将此文件夹纳入版本控制器中。
+- 今天做了些什么
+    - 解决了昨天切换当前登录的用户的问题
+    - 使用 summerblue/administrator 来管理用户、话题、回复、分类、角色、权限等
+    - 管理后台用户管理
 
