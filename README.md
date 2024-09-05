@@ -251,7 +251,7 @@
       spatie/laravel-permission 配置文件
     - [x] `php artisan migrate` 执行数据迁移
     - [x] `php artisan make:migration seed_roles_and_permissions_data` 创建填充 roles 和 permissions 表数据的数据迁移文件
-    - [x] `php artisan migrate:reresh --seed` 刷新数据库并填充数据（在执行这条命令的时候需要跳过 Replies
+    - [x] `php artisan migrate:refresh --seed` 刷新数据库并填充数据（在执行这条命令的时候需要跳过 Replies
       模型的事件监听器），生产环境不要使用
     - [x] `composer require lab404/laravel-impersonate` 安装 lab404/laravel-impersonate 包，用于登录为其他用户
     - [x] `php artisan vendor:publish` 发布 lab404/laravel-impersonate 配置文件，选择发布 Provider:
