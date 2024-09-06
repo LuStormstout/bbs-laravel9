@@ -295,4 +295,10 @@
     - [x] `php artisan larabbs:calculate-active-user` 执行计算活跃用户的命令
     - [x] `php artisan cache:clear` 清除缓存
     - [x] `php artisan schedule:run` 执行计划任务
-- 在 Mac 下，可以使用 `crontab -e` 编辑计划任务，然后添加 `* * * * * cd /你的项目的绝对路径 && php artisan schedule:run >> /dev/null 2>&1`，每分钟执行一次计划任务
+    - [x] `php artisan make:model Link -m` 创建 Link 模型和数据迁移文件
+    - [x] `php artisan migrate` 执行数据迁移
+    - [x] `php artisan make:factory LinkFactory` 创建 LinkFactory 工厂
+    - [x] `php artisan make:seeder LinksTableSeeder` 创建 LinksTableSeeder 填充 links 表数据
+    - [x] `php artisan migrate:refresh --seed` 执行数据填充
+- 在 Mac 下，可以使用 `crontab -e`
+  编辑计划任务，然后添加 `* * * * * cd /你的项目的绝对路径 && php artisan schedule:run >> /dev/null 2>&1`，每分钟执行一次计划任务
