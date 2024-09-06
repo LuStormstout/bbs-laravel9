@@ -264,7 +264,8 @@
     - [x] `php artisan vendor:publish --provider="Frozennode\Administrator\AdministratorServiceProvider"` 发布
       summerblue/administrator 配置文件
     - [x] `mkdir -p config/administrator/settings` 创建配置文件夹
-    - [x] `touch config/administrator/settings/.gitkeep` 创建 .gitkeep 文件, 在空文件夹中放置 .gitkeep 保证了 Git 会将此文件夹纳入版本控制器中。
+    - [x] `touch config/administrator/settings/.gitkeep` 创建 .gitkeep 文件, 在空文件夹中放置 .gitkeep 保证了 Git
+      会将此文件夹纳入版本控制器中。
 - 今天做了些什么
     - 解决了昨天切换当前登录的用户的问题
     - 使用 summerblue/administrator 来管理用户、话题、回复、分类、角色、权限等
@@ -280,3 +281,18 @@
     - 管理后台权限管理
     - 访问后台权限控制
 
+## 2024-09-06
+
+- 今天做了些什么
+    - 侧边栏活跃用户
+        - 活跃用户算法：<b>每个小时</b> ** <b>计算一次</b>，<b>统计</b> ** <b>最近 7 天</b> 所有用户的 <b>帖子数</b>
+          和 <b>评论数</b>，用户每发一个帖子则得 4 分，每发一个回复得 1 分，计算出所有人的得分后再倒序，取前 8 个用户
+        - 假设用户 A 在 7 天发了 10 篇帖子，发了 5 条评论，则其得分为 `10 * 4 + 5 * 1 = 45` 分
+    - 修改 .env 文件中的 `CACHE_DRIVER=file` 为 `CACHE_DRIVER=redis`，使用 redis 作为缓存驱动
+
+- 执行的命令
+    - [x] `php artisan make:command CalculateActiveUser --command=larabbs:calculate-active-user` 创建计算活跃用户的命令
+    - [x] `php artisan larabbs:calculate-active-user` 执行计算活跃用户的命令
+    - [x] `php artisan cache:clear` 清除缓存
+    - [x] `php artisan schedule:run` 执行计划任务
+- 在 Mac 下，可以使用 `crontab -e` 编辑计划任务，然后添加 `* * * * * cd /你的项目的绝对路径 && php artisan schedule:run >> /dev/null 2>&1`，每分钟执行一次计划任务
