@@ -302,3 +302,13 @@
     - [x] `php artisan migrate:refresh --seed` 执行数据填充
 - 在 Mac 下，可以使用 `crontab -e`
   编辑计划任务，然后添加 `* * * * * cd /你的项目的绝对路径 && php artisan schedule:run >> /dev/null 2>&1`，每分钟执行一次计划任务
+
+## 2024-09-09
+
+- 添加外键约束，避免坏数据
+    - 当用户被删除时，删除该用户发布的话题
+    - 当用户被删除时，删除该用户发布的回复
+    - 当话题被删除时，删除该话题下的回复
+- 执行的命令
+    - [x] `php artisan make:migration add_references` 创建添加外键约束的数据迁移文件
+    - [x] `php artisan migrate` 执行数据迁移
