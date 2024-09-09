@@ -309,6 +309,15 @@
     - 当用户被删除时，删除该用户发布的话题
     - 当用户被删除时，删除该用户发布的回复
     - 当话题被删除时，删除该话题下的回复
+- 用户最后活跃时间，每次用户请求的时候，更新用户最后活跃时间，但是因为这样会频繁更新数据库，影响性能，所以我们可以使用缓存来解决这个问题
+    - 记录 - 通过中间件过滤用户所有请求，记录用户访问时间到 Redis 按日期区分的哈希表
+    - 同步 - 新建命令，计划任务每天运行一次此命令，将昨日哈希表里的数据同步到数据库中，并删除昨日哈希表
+    - 读取 - 优先读取当日哈希表里 Redis 里的数据，无数据则使用数据库里的值
 - 执行的命令
     - [x] `php artisan make:migration add_references` 创建添加外键约束的数据迁移文件
     - [x] `php artisan migrate` 执行数据迁移
+    - [x] `php artisan make:middleware RecordLastActivedTime` 创建记录用户最后活跃时间的中间件
+    - [x] `php artisan make:migration add_last_activated_at_users_table --table=users` 添加用户最后活跃时间字段到 users 表
+    - [x] `php artisan migrate` 执行数据迁移
+    - [x] `php artisan make:command SyncUserActivated --command=larabbs:sync-user-activated-at` 创建同步用户最后活跃时间的命令
+    - [x] `php artisan larabbs:sync-user-activated-at` 执行同步用户最后活跃时间的命令
