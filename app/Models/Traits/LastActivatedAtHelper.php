@@ -61,6 +61,9 @@ trait LastActivatedAtHelper
                 $user->save();
             }
         }
+
+        // 以数据库为中心的存储，所以同步后删除 Redis 中的数据
+        Redis::del($hash);
     }
 
     /**
