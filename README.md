@@ -317,7 +317,22 @@
     - [x] `php artisan make:migration add_references` 创建添加外键约束的数据迁移文件
     - [x] `php artisan migrate` 执行数据迁移
     - [x] `php artisan make:middleware RecordLastActivedTime` 创建记录用户最后活跃时间的中间件
-    - [x] `php artisan make:migration add_last_activated_at_users_table --table=users` 添加用户最后活跃时间字段到 users 表
+    - [x] `php artisan make:migration add_last_activated_at_users_table --table=users` 添加用户最后活跃时间字段到 users
+      表
     - [x] `php artisan migrate` 执行数据迁移
     - [x] `php artisan make:command SyncUserActivated --command=larabbs:sync-user-activated-at` 创建同步用户最后活跃时间的命令
     - [x] `php artisan larabbs:sync-user-activated-at` 执行同步用户最后活跃时间的命令
+
+## 2024-09-10
+
+- 今天做了些什么
+    - 站点首页显示为话题列表页面
+    - 用户默认头像
+- 章节总结
+    - 使用 Traits 来为数据模型瘦身
+    - 使用缓存系统来加快数据读取
+    - 自定义 Artisan 命令来完成一些特殊的任务
+    - 使用 Laravel 的任务调度系统来执行计划任务
+    - 了解数据损坏的风险，使用外键约束来避免坏数据
+    - 自定义中间件来统计用户最后活跃时间
+    - 使用 Redis 的哈希表来缓解数据库压力
